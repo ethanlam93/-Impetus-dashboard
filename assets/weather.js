@@ -21,8 +21,8 @@ $.ajax({
     method: "Get"
 }).then (function (response) {
     console.log(response);
-    var lat = response.city.coord.lat;
-    var lon = response.city.coord.lon;
+    lat = response.city.coord.lat;
+    lon = response.city.coord.lon;
     secondQueryUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=b2cb9091c77c412d1dede93b0ba6839c"
 })
 };
