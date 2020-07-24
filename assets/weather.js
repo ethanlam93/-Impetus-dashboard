@@ -13,21 +13,34 @@ console.log(dateLocation);
 var yourZip = 30047;
 var lat = 0;
 var lon = 0;
+var dt = 0;
 
-function getWeather () {
+
+function getWeather() {
     var queryUrl = "https://api.openweathermap.org/data/2.5/forecast?zip=" + yourZip + "&appid=b2cb9091c77c412d1dede93b0ba6839c";
-$.ajax({
-    url: queryUrl,
-    method: "Get"
-}).then (function (response) {
-    console.log(response);
-    lat = response.city.coord.lat;
-    lon = response.city.coord.lon;
-    secondQueryUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=b2cb9091c77c412d1dede93b0ba6839c"
-})
+    $.ajax({
+        url: queryUrl,
+        method: "Get"
+    }).then(function (response) {
+        console.log(response);
+        lat = response.city.coord.lat;
+        lon = response.city.coord.lon;
+        secondQueryUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=b2cb9091c77c412d1dede93b0ba6839c";
+        getFiveDayForecast();
+    })
 };
 
-function getWeatherHistory () {
-    v
+function getFiveDayForecast() {
+    $.ajax({
+        url: secondQueryUrl,
+        method: "Get"
+    }).then (function (response) {
+        console.log(response);
+    })
 }
+
+function getWeatherHistory() {
+    var historyQuery = "https://api.openweather.org/data/2.5/oncall/timeout?"
+}
+
 getWeather();
