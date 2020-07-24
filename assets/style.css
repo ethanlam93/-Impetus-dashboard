@@ -1,59 +1,9 @@
-.container {
-  background-color: aqua;
-  width: 100vw;
-  height: 100vh;
-  border: solid black;
-}
-.welcomeBar {
-  margin-top: 2vh;
-  background-color: silver;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 4vh;
+.column{
+  border: 1px solid black;
+  margin: 5px;
 }
 
-.quote {
-  margin-top: 2vh;
-  background-color: red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 7vh;
-}
-
-.weatherRow {
-  margin-top: 5vh;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.weatherCard {
-  display: flex;
-  align-items: center;
-  margin-top: 2vh;
-  border: solid black;
-  height: 10vh;
-}
-
-.apiRow {
-  margin-top: 15vh;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.apiCard {
-  margin-left: 1vw;
-  margin-right: 1vw;
-  height: 30vh;
-  width: 30vw;
-  border: solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.startPage{
-  margin-top: 150px;
-  align-items: center;
- 
+.section{
+  border: 5px solid rgb(91, 94, 166);
+  margin: 5px;
 }

@@ -8,7 +8,7 @@ $.ajax({
 }).then(function(response){
     $("#meme").attr({
         "src" :response.url,
-        "width" : 100,
-        "heigh": 100,
+        "width" : 400,
+        "heigh": 400,
     })
 })
