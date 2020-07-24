@@ -9,17 +9,28 @@ var thursdayEl = $("#4");
 var fridayEl = $("#5");
 var saturdayEl = $("#6");
 
-var dateLocation = moment().format("d");
-console.log(dateLocation);
-var d = new Date();
-d.setDate(d.getDate()-7);
-console.log(d);
+var currentDate = moment().format("MM-DD-YY");
+var currentDOW = moment().format("dddd");
+
+if (currentDate !== "" && currentDOW !== "") {
+    for (var j = 0; j < 7; j++) {
+        $("#" + j).empty();
+        var displayDOW = moment().add(j, 'day').format("dddd");
+        var displayDate = moment().add(j, 'day').format("MM-DD-YY");
+        var dayEl = $("<h3>");
+        dayEl.addClass("day").text(displayDOW);
+        var dateEl = $("<h4>");
+        dateEl.addClass("date").text(displayDate);
+        $("#" + j).append(dayEl, dateEl);
+    };
+};
+
 
 var userName = "";
 var userZip = 0;
 var lat = 0;
 var lon = 0;
-var dt = 0;
+
 
 // Check to see if values previous entry of username and zipcode.  
 var dashboardUserName = JSON.parse(localStorage.getItem("dun"));
@@ -29,6 +40,8 @@ var dashboardUserZip = JSON.parse(localStorage.getItem("duz"));
 if (dashboardUserName !== null && dashboardUserZip !== null) {
     userName = dashboardUserName;
     userZip = dashboardUserZip;
+    setUserName();
+    getWeather();
     // go straight to quote;
 
 } else {
@@ -55,8 +68,17 @@ function getFiveDayForecast() {
         method: "Get"
     }).then (function (response) {
         console.log(response);
-        dt = response.current.dt;
-        getWeatherHistory();
+        for ( var i = 0; i < 7; i++ ) {
+            var weatherImg = $("<img>");
+            weatherImg.addClass("weatherImg");
+            weatherImg.attr("src", "https://openweathermap.org/img/w/" + response.daily[i].weather[0].icon + ".png");
+            var hiLoTemp = $("<p>");
+            hiLoTemp.addClass("temperature");
+            hiLoTemp.html("Hi- " + response.daily[i].temp.max + " &#8457; <br>Lo- " + response.daily[i].temp.morn + " &#8457;");
+            $("#" + i).append(weatherImg, hiLoTemp);
+        }
+
+        // getWeatherHistory();
     })
 };
 
@@ -71,8 +93,11 @@ function getWeatherHistory() {
 };
 
 function setUserName() {
-    if (userNameEl.val() == "") {
+    if (userNameEl.val() == "" && dashboardUserName == null) {
         return;
+    } else if (userNameEl.val() == "" && dashboardUserName !== null) {
+        $("#headerName").empty();
+        $("#headerName").html("Welcome " + userName);
     } else {
         $("#headerName").empty();
         userName = $("#userName").val();
