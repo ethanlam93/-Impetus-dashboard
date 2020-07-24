@@ -15,7 +15,8 @@ var d = new Date();
 d.setDate(d.getDate()-7);
 console.log(d);
 
-var yourZip = 30047;
+var userName = "";
+var userZip = 0;
 var lat = 0;
 var lon = 0;
 var dt = 0;
@@ -24,19 +25,18 @@ var dt = 0;
 var dashboardUserName = JSON.parse(localStorage.getItem("dun"));
 var dashboardUserZip = JSON.parse(localStorage.getItem("duz"));
 
-// Validate if storage exist, if proceed to dashboard. 
+// Validate if storage exist, if it does proceed to dashboard. 
 if (dashboardUserName !== null && dashboardUserZip !== null) {
-    previousCitiesSearched = storedCities;
-    $("#currentCityWeather").empty();
-    cityToSearch = previousCitiesSearched[0];
-    createCityButtons();
-    mainWeatherHeader();
+    userName = dashboardUserName;
+    userZip = dashboardUserZip;
+    // go straight to quote;
+
 } else {
-    previousCitiesSearched = [];
+    // display form field;
 };
 
 function getWeather() {
-    var queryUrl = "https://api.openweathermap.org/data/2.5/forecast?zip=" + yourZip + "&appid=b2cb9091c77c412d1dede93b0ba6839c";
+    var queryUrl = "https://api.openweathermap.org/data/2.5/forecast?zip=" + userZip + "&appid=b2cb9091c77c412d1dede93b0ba6839c";
     $.ajax({
         url: queryUrl,
         method: "Get"
@@ -71,14 +71,32 @@ function getWeatherHistory() {
 };
 
 function setUserName() {
-    user
+    if (userNameEl.val() == "") {
+        return;
+    } else {
+        $("#headerName").empty();
+        userName = $("#userName").val();
+        localStorage.setItem("dun", JSON.stringify(userName));
+        $("#headerName").html("Welcome " + userName);
+    };
+};
+
+function setUserZip() {
+    if (zipCodeEl.val() == "") {
+        return;
+    } else {
+        userZip = $("#zipCode").val();
+        localStorage.setItem("duz", JSON.stringify(userZip));
+    };
 };
 
 // Click Event to submit form data.
-$(".#submitBtn").on("click", function (event) {
+$("#submitBtn").on("click", function (event) {
     event.preventDefault();
+    console.log(event);
     // $("").removeClass("d-none");
     setUserName();
+    setUserZip();
     getWeather();
 });
 
@@ -86,8 +104,10 @@ $(".#submitBtn").on("click", function (event) {
 $(document).keypress(function (event) {
     if (event.keyCode == 13) {
         event.preventDefault();
+        console.log(event);
         // $("").removeClass("d-none");
         setUserName();
+        setUserZip();
         getWeather();
-    }
+    };
 });
