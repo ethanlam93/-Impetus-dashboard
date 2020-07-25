@@ -23,7 +23,6 @@ var userZip = 0;
 var lat = 0;
 var lon = 0;
 
-<<<<<<< HEAD
 // $.ajax({
 //     url: "https://api.forismatic.com/api/1.0/",
 //     jsonp: "jsonp",
@@ -40,9 +39,6 @@ var lon = 0;
 
 
 // Check to see if values previous entry of username and zipcode.  
-=======
-// Check to see if values previous entry of username and zipcode.
->>>>>>> a88c5b34edf698c65565c0918f957aca8d31035b
 var dashboardUserName = JSON.parse(localStorage.getItem("dun"));
 var dashboardUserZip = JSON.parse(localStorage.getItem("duz"));
 
