@@ -18,7 +18,7 @@
       <div class="field">
         <label class="label">Enter Your First Name for a Personal Experience</label>
         <div class="control">
-          <input class="input is-hovered" type="text" placeholder="e.g Howard Duck">
+          <input class="input is-hovered" id="userName" type="text" placeholder="e.g Howard Duck">
         </div>
       </div>
 
@@ -26,14 +26,14 @@
       <div class="field">
         <label class="label">Enter your Zip Code for Weather and Local Events</label>
         <div class="control">
-          <input class="input is-hovered" type="text" placeholder="e.g. 30316">
+          <input class="input is-hovered" id="zipCode" type="text" placeholder="e.g. 30316">
         </div>
 
       </div>
       <!--Submitt Button-->
       <div class="field">
         <div class="control">
-          <button class="button is-link is-light">Submit</button>
+          <button class="button is-link is-light" id="submitBtn">Submit</button>
         </div>
       </div>
     </div>
@@ -44,8 +44,8 @@
   <div class="section">
     <section class="hero is-medium is-primary is-bold">
       <div class="hero-body">
-        <div class="container">
-          <h1 class="title has-text-centered">
+        <div class="container" id="mainQuote">
+          <h1 class="title has-text-centered quoteText">
             Quote goes here
           </h1>
         </div>
@@ -71,8 +71,8 @@
 
         <!-- Quote -->
         <div class="hero has-text-centered">
-          <div class="quote">
-            <h1 class="is-size-1">
+          <div class="quote" id="headerQuote">
+            <h1 class="is-size-1 quoteText">
               [ Quote will be display here ]
             </h1>
           </div>
@@ -123,5 +123,6 @@
 <script src="./assets/bookapi.js"></script>
 <script type="text/javascript" src="./assets/weather.js"></script>
 <script type="text/javascript" src="./assets/meme.js"></script>
+
 
 </html>
