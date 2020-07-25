@@ -148,7 +148,7 @@ function getWeatherHistory() {
     console.log(response);
   });
 }
-
+// added comment
 function setUserName() {
   if (userNameEl.val() == "" && dashboardUserName == null) {
     return;
