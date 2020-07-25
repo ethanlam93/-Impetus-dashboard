@@ -10,8 +10,15 @@ $(document).ready(function(){
            console.log(data[0].tagline);
            console.log(data[0].description);
            console.log(data[0].image_url);
-        $("#name").text("Beer Name: "+data[0].name);
-        $("#description").text("Description: "+data[0].description).css( "font-size", );
+        $("#name").text(data[0].name).css({
+          fontSize: "20px",
+          color: "black",
+          fontWeight: "bold",
+          });;
+        $("#description").text("Description: "+data[0].description).css({
+          fontSize: "12px",
+          color: "black"
+          });
         $("#image").attr("src", data[0].image_url).height(100);
     
           });
@@ -21,6 +28,16 @@ $(document).ready(function(){
         
         
     });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
