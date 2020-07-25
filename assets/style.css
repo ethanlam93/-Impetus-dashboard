@@ -7,3 +7,12 @@
   border: 5px solid rgb(91, 94, 166);
   margin: 5px;
 }
+
+#bookSearchbar {
+  width: 50%;
+}
+
+#bookSearchDiv {
+  display: flex;
+  justify-content: center;
+}

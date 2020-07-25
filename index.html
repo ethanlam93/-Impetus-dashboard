@@ -108,6 +108,7 @@
     <div class="section">
       <div class="apiRow container is-fluid">
         <div class="columns">
+          <!-- Book API -->
           <div class="apiCard column has-text-centered">
             <h1 class="is-size-5">Your chosen book</h1>
             <div>
@@ -120,10 +121,29 @@
                   ><h1>Buy This Book</h1></a
                 >
               </h1>
-              <h1>book title</h1>
+               <div class="field">
+                <label class="label"
+                  >Looking for something else?</label
+                >
+                <div id="bookSearchDiv" class="control">
+                  <input
+                  id="bookSearchbar"
+                    class="input is-hovered"
+                    type="text"
+                    placeholder="e.g. workouts, health, etc."
+                  />
+                  <div class="field">
+                    <div class="control has-text-centered">
+                    <button id="bookSearchSubmit" class="button is-link is-light">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          <!-- Workout/Recipe API -->
           <div class="apiCard column has-text-centered">It's API content</div>
+          <!-- Meme API -->
           <div class="apiCard column has-text-centered">
             <div>This Meme</div>
             <div>
