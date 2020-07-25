@@ -11,8 +11,8 @@ $(document).ready(function(){
            console.log(data[0].description);
            console.log(data[0].image_url);
         $("#name").text("Beer Name: "+data[0].name);
-        $("#description").text("Description: "+data[0].description);
-        $("#image").attr("src", data[0].image_url);
+        $("#description").text("Description: "+data[0].description).css( "font-size", );
+        $("#image").attr("src", data[0].image_url).height(100);
     
           });
         
