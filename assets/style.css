@@ -16,3 +16,15 @@
   display: flex;
   justify-content: center;
 }
+
+#quoteElement {
+  width: 75vw;
+  position: relative;
+  top: 25vh;
+  text-align: center;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
