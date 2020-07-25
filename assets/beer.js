@@ -11,7 +11,7 @@ $(document).ready(function(){
            console.log(data[0].description);
            console.log(data[0].image_url);
         $("#name").text(data[0].name).css({
-          fontSize: "20px",
+          fontSize: " 20px",
           color: "black",
           fontWeight: "bold",
           });;
@@ -21,12 +21,7 @@ $(document).ready(function(){
           });
         $("#image").attr("src", data[0].image_url).height(100);
     
-          });
-        
-        
-        
-        
-        
+          });    
     });
     
     
