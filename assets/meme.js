@@ -1,7 +1,7 @@
 
 
 
-
+function giveMeme() {
 $.ajax({
     url: "https://meme-api.herokuapp.com/gimme",
     method: "GET"
@@ -11,4 +11,7 @@ $.ajax({
         "width" : 400,
         "heigh": 400,
     })
-})
+})}
+giveMeme()
+
+$("#giveMeMore").click(giveMeme)
