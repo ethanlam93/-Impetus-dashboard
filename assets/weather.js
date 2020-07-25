@@ -1,13 +1,7 @@
 var headerNameEl = $("#headerName");
 var userNameEl = $("#userName");
 var zipCodeEl = $("#zipCode");
-var sundayEl = $("#0");
-var mondayEl = $("#1");
-var tuesdayEl = $("#2");
-var wednesdayEl = $("#3");
-var thursdayEl = $("#4");
-var fridayEl = $("#5");
-var saturdayEl = $("#6");
+
 
 var currentDate = moment().format("MM-DD-YY");
 var currentDOW = moment().format("dddd");
@@ -48,6 +42,19 @@ if (dashboardUserName !== null && dashboardUserZip !== null) {
     // display form field;
 };
 
+function getQuote() {
+    $.ajax({
+        url: "https://favqs.com/api/qotd",
+        method: "Get"
+    }).then(function (response) {
+        console.log(response);
+        $("#mainQuote").empty();
+        $("#mainQuote").html("<div class='quoteBody'>" + response.quote.body + "</div> <div class='quoteAuthor'>" + response.quote.author + "</div>");
+        $("#headerQuote").empty();
+        $("#headerQuote").html("<div class='quoteBody'>" + response.quote.body + "</div> <div class='quoteAuthor'>" + response.quote.author + "</div>");
+    })
+}
+
 function getWeather() {
     var queryUrl = "https://api.openweathermap.org/data/2.5/forecast?zip=" + userZip + "&appid=b2cb9091c77c412d1dede93b0ba6839c";
     $.ajax({
@@ -63,6 +70,7 @@ function getWeather() {
 };
 
 function getFiveDayForecast() {
+    getQuote();
     $.ajax({
         url: secondQueryUrl,
         method: "Get"
