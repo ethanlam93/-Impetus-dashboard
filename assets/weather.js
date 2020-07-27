@@ -14,6 +14,7 @@ var dashboardUserZip = JSON.parse(localStorage.getItem("duz"));
 if (dashboardUserName !== null && dashboardUserZip !== null) {
   userName = dashboardUserName;
   userZip = dashboardUserZip;
+  getQuote();
   setUserName();
   getWeather();
   switchDisplay();
@@ -73,7 +74,6 @@ function getWeather() {
 
 // Function to pull five day forecast based on lat and lon coordinates generated above to populate html.
 function getFiveDayForecast() {
-  getQuote();
   $.ajax({
     url: secondQueryUrl,
     method: "Get",
@@ -143,6 +143,7 @@ function switchDisplay() {
 $("#submitBtn").on("click", function (event) {
   event.preventDefault();
   console.log(event);
+  getQuote();
   setUserName();
   setUserZip();
   getWeather();
@@ -150,10 +151,11 @@ $("#submitBtn").on("click", function (event) {
 });
 
 // keypress event added to enter key within text input
-$(document).keypress(function (event) {
+$("#username,#zipCode").keypress(function (event) {
   if (event.keyCode == 13) {
     event.preventDefault();
     console.log(event);
+    getQuote();
     setUserName();
     setUserZip();
     getWeather();
