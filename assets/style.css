@@ -1,3 +1,8 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
 .column {
   border: 1px solid black;
   margin: 5px;
@@ -8,8 +13,31 @@
   margin: 5px;
 }
 
-#bookSearchbar {
-  width: 50%;
+.startPage {
+  position: relative;
+  top: 25vh;
+  text-align: center;
+}
+
+.startForm {
+  display: flex;
+  justify-content: center;
+}
+
+#submitButton {
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  width: 75%;
+}
+
+#quoteElement {
+  width: 75vw;
+  position: relative;
+  top: 25vh;
+  text-align: center;
 }
 
 #bookSearchDiv {
