@@ -68,6 +68,8 @@ function getWeather() {
       "&lon=" +
       lon +
       "&units=imperial&appid=b2cb9091c77c412d1dede93b0ba6839c";
+      console.log(queryUrl)
+    $(".cityName").text(response.city.name.toUpperCase())
     getFiveDayForecast();
   });
 }
@@ -98,6 +100,7 @@ function getFiveDayForecast() {
           " &#8457;"
       );
       $("#" + i).append(weatherImg, hiLoTemp);
+      
     }
   });
 }
@@ -136,6 +139,7 @@ function switchDisplay() {
   setTimeout(function () {
     $("#quoteElement").css("display", "none");
     $("#mainDashboard").css("display", "block");
+    tl(play)
   }, 4000);
 }
 
