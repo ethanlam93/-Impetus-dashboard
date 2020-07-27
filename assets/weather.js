@@ -131,6 +131,8 @@ function setUserZip() {
 function switchDisplay() {
   $(".startPage, #mainDashboard").css("display", "none");
   $("#quoteElement").css("display", "block");
+  //display slow animation transition
+  gsap.from("#quoteElement",{opacity:0, duration: 2, y:50, ease: "sine.in"})
   setTimeout(function () {
     $("#quoteElement").css("display", "none");
     $("#mainDashboard").css("display", "block");
