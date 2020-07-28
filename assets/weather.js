@@ -159,15 +159,20 @@ function switchDisplay() {
 
 // Click Event to submit form data.
 $("#submitBtn").on("click", function (event) {
-  event.preventDefault();
-  console.log(event);
-  getQuote();
-  setUserName();
-  setUserZip();
-  getWeather();
-  switchDisplay();
+  if(!$("#userName").val() || !$("#zipCode").val()){
+    $(".modal").addClass("is-active")}
+  else{
+    event.preventDefault();
+    console.log(event);
+    getQuote();
+    setUserName();
+    setUserZip();
+    getWeather();
+    switchDisplay();}
 });
 
+$(".modal-background").click(function(){$(".modal").removeClass("is-active")})
+$(".modalBtn").click(function(){$(".modal").removeClass("is-active")})
 // keypress event added to enter key within text input
 $("#username,#zipCode").keypress(function (event) {
   if (event.keyCode == 13) {
