@@ -37,17 +37,17 @@ function getQuote() {
     console.log(response);
     $("#mainQuote").empty();
     $("#mainQuote").html(
-      "<div class='quoteBody title is-1'>" +
+      "<blockquote class='quoteBody title'>" +
         response.quote.body +
-        "</div> <div class='quoteAuthor title is-2 is-italic'>" +
+        "</blockquote> <div class='quoteAuthor'>" +
         response.quote.author +
         "</div>"
     );
     $("#headerQuote").empty();
     $("#headerQuote").html(
-      "<div class='quoteBody title is-4'>" +
+      "<blockquote class='quoteBody title brooks'>" +
         response.quote.body +
-        "</div> <div class='quoteAuthor title is-5 is-italic'>" +
+        "</blockquote> <div class='quoteAuthor'>" +
         response.quote.author +
         "</div>"
     );
@@ -194,7 +194,7 @@ function switchDisplay() {
   setTimeout(function () {
     $("#quoteElement").css("display", "none");
     $("#mainDashboard").css("display", "block");
-  },1000);
+  },4000);
 
 }
 

@@ -5,13 +5,15 @@ body {
   
 }
 html{
-  background: linear-gradient(to right, #ffefba, #ffffff)
+  background-image: url("darkmode.jpg");
+  background-position: top left;
 }
+
 
 .column {
   border-radius: 10px;
   margin: 5px;
-  background:rgb(243, 249, 255, 0.5);
+  background:rgb(255, 251, 250, 0.9);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -42,21 +44,55 @@ html{
   text-align: center;
 }
 
-.quoteBody{
-  font-size: 30px !important;
+blockquote{
+  align-content: center;
+
 }
+.quoteBody{
+  color:white;
+  opacity: 0.5
+}
+
+.quoteAuthor{
+  font-family: 'Sanchez', serif;
+  font-style: italic;
+  font-size: 20px
+}
+
+@import "compass/css3";
+.brooks {
+  position: relative;
+  font-family: 'Sanchez', serif;
+  line-height: 1.5em;
+  font-style: italic;}
+  
+  .brooks:before {
+      content: '\201C';
+      position: absolute;
+      left: -0.5em;
+      font-size: 4em;
+      z-index: -1;
+   }
+
+
+
 
 #bookSearchDiv {
   display: flex;
   justify-content: center;
 }
 
-.cityName{
-  display: flex;
-  font-size: 20px;
-  margin: 30px 30px 30px 0px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: rgb(243, 249, 255, 0.5) !important;
+#dateDisplay
+{
+  color:rgb(28, 12, 59)
+}
+#headerName{
+  color: white
+}
+
+
+.title{
+  color: white !important;
 }
 
 .modalBtn{
@@ -99,16 +135,4 @@ html{
 .preloader.loaded{
   opacity: 0;
   pointer-events: none;
-}
-
-/* Always show scroll bar when content is overflown */
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 7px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: rgba(0, 0, 0, .5);
-  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
