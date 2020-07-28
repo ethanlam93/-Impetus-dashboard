@@ -172,6 +172,7 @@ function setUserZip() {
 
 // Function to switch display class at timed interval for quote and main dashboard on field submit
 function switchDisplay() {
+  localWeather();
   $(".startPage, #mainDashboard").css("display", "none");
   $("#quoteElement").css("display", "block");
   //display slow animation transition
