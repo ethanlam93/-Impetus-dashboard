@@ -7,8 +7,8 @@ var lat = 0;
 var lon = 0;
 
 var eventStartDate = "&datetime_local.gte=" + moment().format("YYYY-MM-DD");
-var eventEndDate = "&datetime_local.lt=" + moment().add(7, "day").format("YYYY-MM-DD");
-
+var eventEndDate =
+  "&datetime_local.lt=" + moment().add(7, "day").format("YYYY-MM-DD");
 
 // Check to see if values previous entry of username and zipcode.
 var dashboardUserName = JSON.parse(localStorage.getItem("dun"));
@@ -56,14 +56,19 @@ function getQuote() {
 
 // Function to retrieve local events using zip code and date range
 function getEvents() {
-  var eventQuery = "https://api.seatgeek.com/2/events?client_id=MjEyMzc4NzN8MTU5NTg5NDE2Ny42NA&geoip=" + userZip + "&range=30mi" + eventStartDate + eventEndDate;
+  var eventQuery =
+    "https://api.seatgeek.com/2/events?client_id=MjEyMzc4NzN8MTU5NTg5NDE2Ny42NA&geoip=" +
+    userZip +
+    "&range=30mi" +
+    eventStartDate +
+    eventEndDate;
   console.log(eventQuery);
   $.ajax({
     url: eventQuery,
-    method: "Get"
-  }).then (function(response) {
+    method: "Get",
+  }).then(function (response) {
     console.log(response);
-    for ( var x = 0; x < response.events.length; x++) {
+    for (var x = 0; x < response.events.length; x++) {
       var eventEl = $("<div>");
       eventEl.addClass("eventCard column has-text-centered");
       eventEl.attr("id", "x" + x);
@@ -81,10 +86,8 @@ function getEvents() {
       locationEl.html("Venue: <br>" + response.events[x].venue.name);
       eventEl.append(dateEl, titleEl, locationEl);
       $(".eventRow").append(eventEl);
-
     }
-
-  })
+  });
 }
 
 // First function to get weather from zipcode in order to obtain lat and lon coordinates
@@ -106,7 +109,7 @@ function getWeather() {
       "&lon=" +
       lon +
       "&units=imperial&appid=b2cb9091c77c412d1dede93b0ba6839c";
-    $(".cityName").text(response.city.name.toUpperCase())
+    $(".cityName").text(response.city.name.toUpperCase());
     getFiveDayForecast();
   });
 }
@@ -124,20 +127,19 @@ function getFiveDayForecast() {
       weatherImg.attr(
         "src",
         "https://openweathermap.org/img/w/" +
-        response.daily[i].weather[0].icon +
-        ".png"
+          response.daily[i].weather[0].icon +
+          ".png"
       );
       var hiLoTemp = $("<p>");
       hiLoTemp.addClass("temperature");
       hiLoTemp.html(
         "<strong>Hi-</strong> " +
-        response.daily[i].temp.max +
-        " &#8457; <br> <strong>Lo-</strong> " +
-        response.daily[i].temp.morn +
-        " &#8457;"
+          response.daily[i].temp.max +
+          " &#8457; <br> <strong>Lo-</strong> " +
+          response.daily[i].temp.morn +
+          " &#8457;"
       );
       $("#" + i).append(weatherImg, hiLoTemp);
-
     }
   });
 }
@@ -173,48 +175,56 @@ function switchDisplay() {
   $(".startPage, #mainDashboard").css("display", "none");
   $("#quoteElement").css("display", "block");
   //display slow animation transition
-  gsap.from("#quoteElement", { opacity: 0, duration: 2, y: 50, ease: "sine.in" });
+  gsap.from("#quoteElement", {
+    opacity: 0,
+    duration: 2,
+    y: 50,
+    ease: "sine.in",
+  });
   //Animation for the dashboard
-  var tl = gsap.timeline({ duration: 6, ease: "Sine.easeOut" })
-  tl
-    .from("#dateDisplay", { opacity: 0, y: -50 })
+  var tl = gsap.timeline({ duration: 6, ease: "Sine.easeOut" });
+  tl.from("#dateDisplay", { opacity: 0, y: -50 })
     .from("#headerName", { opacity: 0, y: -50 })
     .from(".quote", { opacity: 0, y: -50 })
     .from(".cityName", { opacity: 0, y: -50 })
-    .from(".sun", { opacity: 0, y: -50 },'-=0.5')
-    .from(".mon", { opacity: 0, y: -50 },'-=0.5')
-    .from(".tues", { opacity: 0, y: -50 },'-=0.3')
-    .from(".wed", { opacity: 0, y: -50 },'-=0.3')
-    .from(".thurs", { opacity: 0, y: -50 },'-=0.2')
-    .from(".fri", { opacity: 0, y: -50 },'-=0.2')
-    .from(".sat", { opacity: 0, y: -50 },'-=0.2')
-    .from(".eventLabel", { opacity: 0, y: -50 },'-=0.2')
-    .from(".eventRow", { opacity: 0, y: -50 },'-=0.2')
-    .from(".apiRow", { opacity: 0, y: -50, })
+    .from(".sun", { opacity: 0, y: -50 }, "-=0.5")
+    .from(".mon", { opacity: 0, y: -50 }, "-=0.5")
+    .from(".tues", { opacity: 0, y: -50 }, "-=0.3")
+    .from(".wed", { opacity: 0, y: -50 }, "-=0.3")
+    .from(".thurs", { opacity: 0, y: -50 }, "-=0.2")
+    .from(".fri", { opacity: 0, y: -50 }, "-=0.2")
+    .from(".sat", { opacity: 0, y: -50 }, "-=0.2")
+    .from(".eventLabel", { opacity: 0, y: -50 }, "-=0.2")
+    .from(".eventRow", { opacity: 0, y: -50 }, "-=0.2")
+    .from(".apiRow", { opacity: 0, y: -50 });
   setTimeout(function () {
     $("#quoteElement").css("display", "none");
     $("#mainDashboard").css("display", "block");
   }, 6000);
-
 }
 
 // Click Event to submit form data.
 $("#submitBtn").on("click", function (event) {
-  if(!$("#userName").val() || !$("#zipCode").val()){
-    $(".modal").addClass("is-active")}
-  else{
+  if (!$("#userName").val() || !$("#zipCode").val()) {
+    $(".modal").addClass("is-active");
+  } else {
     event.preventDefault();
     console.log(event);
     getQuote();
     setUserName();
     setUserZip();
     getWeather();
-    switchDisplay();}
+    switchDisplay();
+  }
 });
 
-$(".modal-background").click(function(){$(".modal").removeClass("is-active")});
+$(".modal-background").click(function () {
+  $(".modal").removeClass("is-active");
+});
 
-$(".modalBtn").click(function(){$(".modal").removeClass("is-active")});
+$(".modalBtn").click(function () {
+  $(".modal").removeClass("is-active");
+});
 
 // keypress event added to enter key within text input
 $("#username,#zipCode").keypress(function (event) {
