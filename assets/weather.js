@@ -6,6 +6,10 @@ var userZip = 0;
 var lat = 0;
 var lon = 0;
 
+var eventStartDate = "&datetime_local.gte=" + moment().format("YYYY-MM-DD");
+var eventEndDate = "&datetime_local.lt=" + moment().add(7, "day").format("YYYY-MM-DD");
+
+
 // Check to see if values previous entry of username and zipcode.
 var dashboardUserName = JSON.parse(localStorage.getItem("dun"));
 var dashboardUserZip = JSON.parse(localStorage.getItem("duz"));
@@ -18,6 +22,7 @@ if (dashboardUserName !== null && dashboardUserZip !== null) {
   setUserName();
   getWeather();
   switchDisplay();
+  getEvents();
 } else {
   $("#mainDashboard").css("display", "none");
   $("#quoteElement").css("display", "none");
@@ -32,21 +37,54 @@ function getQuote() {
     console.log(response);
     $("#mainQuote").empty();
     $("#mainQuote").html(
-      "<div class='quoteBody'>" +
+      "<div class='quoteBody title is-1'>" +
         response.quote.body +
-        "</div> <div class='quoteAuthor'>" +
+        "</div> <div class='quoteAuthor title is-2 is-italic'>" +
         response.quote.author +
         "</div>"
     );
     $("#headerQuote").empty();
     $("#headerQuote").html(
-      "<div class='quoteBody'>" +
+      "<div class='quoteBody title is-4'>" +
         response.quote.body +
-        "</div> <div class='quoteAuthor'>" +
+        "</div> <div class='quoteAuthor title is-5 is-italic'>" +
         response.quote.author +
         "</div>"
     );
   });
+}
+
+// Function to retrieve local events using zip code and date range
+function getEvents() {
+  var eventQuery = "https://api.seatgeek.com/2/events?client_id=MjEyMzc4NzN8MTU5NTg5NDE2Ny42NA&geoip=" + userZip + "&range=30mi" + eventStartDate + eventEndDate;
+  console.log(eventQuery);
+  $.ajax({
+    url: eventQuery,
+    method: "Get"
+  }).then (function(response) {
+    console.log(response);
+    for ( var x = 0; x < response.events.length; x++) {
+      var eventEl = $("<div>");
+      eventEl.addClass("eventCard column has-text-centered");
+      eventEl.attr("id", "x" + x);
+      var dateStr = response.events[x].datetime_local;
+      var eventDate = moment(dateStr);
+      var eventDateDsp = eventDate.utc().format("dddd <br> M-D");
+      var dateEl = $("<div>");
+      dateEl.addClass("eventDate is-size-4 has-text-weight-bold");
+      dateEl.html(eventDateDsp);
+      var titleEl = $("<div>");
+      titleEl.addClass("eventTitle is-size-6 has-text-weight-semibold");
+      titleEl.html(response.events[x].title);
+      var locationEl = $("<div>");
+      locationEl.addClass("eventLoc is-size-6 is-italic");
+      locationEl.html("Venue: <br>" + response.events[x].venue.name);
+      eventEl.append(dateEl, titleEl, locationEl);
+      $(".eventRow").append(eventEl);
+
+    }
+
+  })
 }
 
 // First function to get weather from zipcode in order to obtain lat and lon coordinates
@@ -92,9 +130,9 @@ function getFiveDayForecast() {
       var hiLoTemp = $("<p>");
       hiLoTemp.addClass("temperature");
       hiLoTemp.html(
-        "Hi- " +
+        "<strong>Hi-</strong> " +
         response.daily[i].temp.max +
-        " &#8457; <br>Lo- " +
+        " &#8457; <br> <strong>Lo-</strong> " +
         response.daily[i].temp.morn +
         " &#8457;"
       );
@@ -126,6 +164,7 @@ function setUserZip() {
   } else {
     userZip = $("#zipCode").val();
     localStorage.setItem("duz", JSON.stringify(userZip));
+    getEvents();
   }
 }
 
@@ -149,6 +188,8 @@ function switchDisplay() {
     .from(".thurs", { opacity: 0, y: -50 },'-=0.2')
     .from(".fri", { opacity: 0, y: -50 },'-=0.2')
     .from(".sat", { opacity: 0, y: -50 },'-=0.2')
+    .from(".eventLabel", { opacity: 0, y: -50 },'-=0.2')
+    .from(".eventRow", { opacity: 0, y: -50 },'-=0.2')
     .from(".apiRow", { opacity: 0, y: -50, })
   setTimeout(function () {
     $("#quoteElement").css("display", "none");
@@ -171,8 +212,10 @@ $("#submitBtn").on("click", function (event) {
     switchDisplay();}
 });
 
-$(".modal-background").click(function(){$(".modal").removeClass("is-active")})
-$(".modalBtn").click(function(){$(".modal").removeClass("is-active")})
+$(".modal-background").click(function(){$(".modal").removeClass("is-active")});
+
+$(".modalBtn").click(function(){$(".modal").removeClass("is-active")});
+
 // keypress event added to enter key within text input
 $("#username,#zipCode").keypress(function (event) {
   if (event.keyCode == 13) {
