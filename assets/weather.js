@@ -68,6 +68,7 @@ function getWeather() {
       "&lon=" +
       lon +
       "&units=imperial&appid=b2cb9091c77c412d1dede93b0ba6839c";
+    $(".cityName").text(response.city.name.toUpperCase())
     getFiveDayForecast();
   });
 }
@@ -85,19 +86,20 @@ function getFiveDayForecast() {
       weatherImg.attr(
         "src",
         "https://openweathermap.org/img/w/" +
-          response.daily[i].weather[0].icon +
-          ".png"
+        response.daily[i].weather[0].icon +
+        ".png"
       );
       var hiLoTemp = $("<p>");
       hiLoTemp.addClass("temperature");
       hiLoTemp.html(
         "Hi- " +
-          response.daily[i].temp.max +
-          " &#8457; <br>Lo- " +
-          response.daily[i].temp.morn +
-          " &#8457;"
+        response.daily[i].temp.max +
+        " &#8457; <br>Lo- " +
+        response.daily[i].temp.morn +
+        " &#8457;"
       );
       $("#" + i).append(weatherImg, hiLoTemp);
+
     }
   });
 }
@@ -132,24 +134,45 @@ function switchDisplay() {
   $(".startPage, #mainDashboard").css("display", "none");
   $("#quoteElement").css("display", "block");
   //display slow animation transition
-  gsap.from("#quoteElement",{opacity:0, duration: 2, y:50, ease: "sine.in"})
+  gsap.from("#quoteElement", { opacity: 0, duration: 2, y: 50, ease: "sine.in" });
+  //Animation for the dashboard
+  var tl = gsap.timeline({ duration: 6, ease: "Sine.easeOut" })
+  tl
+    .from("#dateDisplay", { opacity: 0, y: -50 })
+    .from("#headerName", { opacity: 0, y: -50 })
+    .from(".quote", { opacity: 0, y: -50 })
+    .from(".cityName", { opacity: 0, y: -50 })
+    .from(".sun", { opacity: 0, y: -50 },'-=0.5')
+    .from(".mon", { opacity: 0, y: -50 },'-=0.5')
+    .from(".tues", { opacity: 0, y: -50 },'-=0.3')
+    .from(".wed", { opacity: 0, y: -50 },'-=0.3')
+    .from(".thurs", { opacity: 0, y: -50 },'-=0.2')
+    .from(".fri", { opacity: 0, y: -50 },'-=0.2')
+    .from(".sat", { opacity: 0, y: -50 },'-=0.2')
+    .from(".apiRow", { opacity: 0, y: -50, })
   setTimeout(function () {
     $("#quoteElement").css("display", "none");
     $("#mainDashboard").css("display", "block");
-  }, 4000);
+  }, 6000);
+
 }
 
 // Click Event to submit form data.
 $("#submitBtn").on("click", function (event) {
-  event.preventDefault();
-  console.log(event);
-  getQuote();
-  setUserName();
-  setUserZip();
-  getWeather();
-  switchDisplay();
+  if(!$("#userName").val() || !$("#zipCode").val()){
+    $(".modal").addClass("is-active")}
+  else{
+    event.preventDefault();
+    console.log(event);
+    getQuote();
+    setUserName();
+    setUserZip();
+    getWeather();
+    switchDisplay();}
 });
 
+$(".modal-background").click(function(){$(".modal").removeClass("is-active")})
+$(".modalBtn").click(function(){$(".modal").removeClass("is-active")})
 // keypress event added to enter key within text input
 $("#username,#zipCode").keypress(function (event) {
   if (event.keyCode == 13) {
