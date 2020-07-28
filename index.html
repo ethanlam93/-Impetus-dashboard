@@ -57,11 +57,11 @@
 
   <!-- Quote will display here -->
   <div class="section" id="quoteElement">
-    <section class="hero is-medium is-primary is-bold">
+    <section class="hero is-medium is-dark is-bold">
       <div class="hero-body">
         <div class="container" id="mainQuote">
           <h1 class="title has-text-centered quoteText">
-            
+
           </h1>
         </div>
       </div>
@@ -70,32 +70,32 @@
 
 
 
-<div class="section" id="mainDashboard">
-  <!-- Main DashBoard -->
-  <div class="section">
-    <div class="hero">
-      <div class="hero-body">
-        <!-- Greetings -->
-        <div class="container is-fluid has-text-centered">
-          <div class="welcomeBar">
-            <h1 id="dateDisplay" class="is-size-1"></h1>
-            <h1 class="is-size-1" id="headerName">
-              Welcome Beautiful
-            </h1>
+  <div class="section" id="mainDashboard" style="padding-top:0;padding-bottom:0" >
+    <!-- Main DashBoard -->
+    <div class="section" style="padding-top:0;padding-bottom:0">
+      <div class="hero">
+        <div class="hero-body">
+          <!-- Greetings -->
+          <div class="container is-fluid has-text-centered">
+            <div class="welcomeBar">
+              <h1 id="dateDisplay" class="is-size-1"></h1>
+              <h1 class="is-size-1" id="headerName">
+                Welcome Beautiful
+              </h1>
+            </div>
           </div>
-        </div>
 
-        <!-- Quote -->
-        <div class="hero has-text-centered">
-          <div class="quote" id="headerQuote">
-            <h1 class="is-size-1 quoteText">
-              [ Quote will be display here ]
-            </h1>
+          <!-- Quote -->
+          <div class="hero has-text-centered">
+            <div class="quote" id="headerQuote">
+              <h1 class="is-size-1 quoteText">
+                [ Quote will be display here ]
+              </h1>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
   <div class="section">
     <div class="container is-fluid">
@@ -110,58 +110,56 @@
         <div class="weatherCard column has-text-centered bookSearchSubmit sat" id="6">Saturday</div>
       </div>
     </div>
-  </div>
 
-  <!-- API row -->
-  <div class="section">
-    <div class="apiRow container is-fluid">
-      <div class="columns">
-        <!-- Book API -->
-        <div class="apiCard column has-text-centered">
-          <h1 class="is-size-5">Your chosen book</h1>
-          <div>
-            <h1 class="is-size-3" id="bookTitle">book title</h1>
+    <!-- API row -->
+    <div class="section">
+      <div class="apiRow container is-fluid">
+        <div class="columns">
+          <!-- Book API -->
+          <div class="apiCard column has-text-centered">
+            <h1 class="is-size-5">Your chosen book</h1>
             <div>
-              <img style="margin-top: 1vh;" src="" id="bookCover" alt="" />
-            </div>
-            <h1>
-              <a target="_blank" id="bookLink" href="">
-                <h1>Buy This Book</h1>
-              </a>
-            </h1>
-            <div class="field">
-              <label class="label">Looking for something else?</label>
-              <div id="bookSearchDiv" class="control">
-                <input id="bookSearchbar" class="input is-hovered" type="text"
-                  placeholder="e.g. workouts, health, etc." />
-                <div class="field">
-                  <div class="control has-text-centered">
-                    <button id="bookSearchSubmit" class="button is-link is-light">Submit</button>
+              <h1 class="is-size-3" id="bookTitle">book title</h1>
+              <div>
+                <img style="margin-top: 1vh;" src="" id="bookCover" alt="" />
+              </div>
+              <h1>
+                <a target="_blank" id="bookLink" href="">
+                  <h1>Buy This Book</h1>
+                </a>
+              </h1>
+              <div class="field">
+                <label class="label">Looking for something else?</label>
+                <div id="bookSearchDiv" class="control">
+                  <input id="bookSearchbar" class="input is-hovered" type="text"
+                    placeholder="e.g. workouts, health, etc." />
+                  <div class="field">
+                    <div class="control has-text-centered">
+                      <button id="bookSearchSubmit" class="button is-link is-light">Submit</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- Workout/Recipe API -->
-        <div class="apiCard column has-text-centered">Checkout this Beer
-          <h2 id="name"></h2>
-          <div id="description"></div>
-          <img id="image">
-        </div>
-        <!-- Meme API -->
-        <div class="apiCard column has-text-centered">
-          <div>This Meme</div>
-          <div>
-            <img src="" id="meme" />
-            <button class="button is-primary" id="giveMeMore">Give Me More Meme</button>
+          <!-- Workout/Recipe API -->
+          <div class="apiCard column has-text-centered">Checkout this Beer
+            <h2 id="name"></h2>
+            <div id="description"></div>
+            <img id="image">
+          </div>
+          <!-- Meme API -->
+          <div class="apiCard column has-text-centered">
+            <div>Your Meme</div>
+            <div>
+              <img src="" id="meme" />
+              <button class="button is-primary" id="giveMeMore">Give Me More Meme</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
-</div>
 
 </body>
 
@@ -174,5 +172,5 @@
 <script type="text/javascript" src="./assets/weather.js"></script>
 <script type="text/javascript" src="./assets/meme.js"></script>
 <script type="text/javascript" src="./assets/beer.js"></script>
-<script defer type="text/javascript" src="./assets/animation.js"></script>
+
 </html>

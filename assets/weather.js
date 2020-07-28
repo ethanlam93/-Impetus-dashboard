@@ -32,17 +32,17 @@ function getQuote() {
     console.log(response);
     $("#mainQuote").empty();
     $("#mainQuote").html(
-      "<div class='quoteBody'>" +
+      "<div class='quoteBody title is-1'>" +
         response.quote.body +
-        "</div> <div class='quoteAuthor'>" +
+        "</div> <div class='quoteAuthor title is-2 is-italic'>" +
         response.quote.author +
         "</div>"
     );
     $("#headerQuote").empty();
     $("#headerQuote").html(
-      "<div class='quoteBody'>" +
+      "<div class='quoteBody title is-4'>" +
         response.quote.body +
-        "</div> <div class='quoteAuthor'>" +
+        "</div> <div class='quoteAuthor title is-5 is-italic'>" +
         response.quote.author +
         "</div>"
     );
@@ -92,9 +92,9 @@ function getFiveDayForecast() {
       var hiLoTemp = $("<p>");
       hiLoTemp.addClass("temperature");
       hiLoTemp.html(
-        "Hi- " +
+        "<strong>Hi-</strong> " +
         response.daily[i].temp.max +
-        " &#8457; <br>Lo- " +
+        " &#8457; <br> <strong>Lo-</strong> " +
         response.daily[i].temp.morn +
         " &#8457;"
       );

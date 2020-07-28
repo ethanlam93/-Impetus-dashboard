@@ -1,3 +1,4 @@
+body, html { height: 100%}
 body {
   display: flex;
   justify-content: center;
@@ -8,10 +9,6 @@ body {
   margin: 5px;
 }
 
-.section {
-  border: 5px solid rgb(91, 94, 166);
-  margin: 5px;
-}
 
 .startPage {
   position: relative;
@@ -35,9 +32,12 @@ body {
 
 #quoteElement {
   width: 75vw;
-  position: relative;
   top: 25vh;
   text-align: center;
+}
+
+.quoteBody{
+  font-size: 30px !important;
 }
 
 #bookSearchDiv {
@@ -70,4 +70,5 @@ body {
   right: 0;
   z-index: -1;
 }
+
 
