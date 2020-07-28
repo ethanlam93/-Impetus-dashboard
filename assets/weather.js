@@ -153,7 +153,7 @@ function switchDisplay() {
   setTimeout(function () {
     $("#quoteElement").css("display", "none");
     $("#mainDashboard").css("display", "block");
-  }, 6000);
+  },1000);
 
 }
 
