@@ -8,11 +8,19 @@ function giveMeme() {
       width: 400,
       heigh: 400,
     });
-    gsap.fromTo("#meme", {autoAlpha: 0, x:-100}, {autoAlpha: 1, duration: 2,x:0});
+    gsap.fromTo(
+      "#meme",
+      { autoAlpha: 0, x: -100 },
+      { autoAlpha: 1, duration: 2, x: 0 }
+    );
   });
 }
 giveMeme();
 
-$("#giveMeMore").click(function(){
-  gsap.fromTo("#meme", {autoAlpha: 1}, {autoAlpha: 0, duration: 2, x:100, onComplete: giveMeme});
-})
+$("#giveMeMore").click(function () {
+  gsap.fromTo(
+    "#meme",
+    { autoAlpha: 1 },
+    { autoAlpha: 0, duration: 2, x: 100, onComplete: giveMeme }
+  );
+});

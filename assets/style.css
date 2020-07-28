@@ -1,14 +1,18 @@
-body, html { height: 100%}
+body,
+html {
+  height: 100%;
+}
 body {
   display: flex;
   justify-content: center;
+  background-size: cover;
+  overflow: auto;
 }
 
 .column {
   border: 1px solid black;
   margin: 5px;
 }
-
 
 .startPage {
   position: relative;
@@ -36,7 +40,7 @@ body {
   text-align: center;
 }
 
-.quoteBody{
+.quoteBody {
   font-size: 30px !important;
 }
 
@@ -45,20 +49,20 @@ body {
   justify-content: center;
 }
 
-.cityName{
+.cityName {
   font-size: 20px;
 }
 
-.modalBtn{
+.modalBtn {
   max-height: 100px !important;
   max-width: 100px !important;
   height: 100px !important;
-  width: 100px !important
+  width: 100px !important;
 }
 
-.modalText{
+.modalText {
   font-size: 30px;
-  color: white
+  color: white;
 }
 
 .background {
@@ -70,5 +74,3 @@ body {
   right: 0;
   z-index: -1;
 }
-
-
