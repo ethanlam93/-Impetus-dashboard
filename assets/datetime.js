@@ -16,4 +16,4 @@ setInterval(function () {
   $("#dateDisplay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
 }, 1000);
 
-gsap.from(".firstPage", {opacity:0, duration: 2.7, y:-50, ease: "sine.in"})
+gsap.from(".firstPage", { opacity: 0, duration: 2.7, y: -50, ease: "sine.in" });
