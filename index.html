@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/reset.css" />
-    <link rel="stylesheet" href="./assets/bulma.css" />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <title>Testing</title>
-  </head>
 
-  <body>
-    <!-- Background -->
-    <div class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <p class="image is-2by2">
-          <img
-            src="https://www.cheatsheet.com/wp-content/uploads/2019/12/Rainn-Wilson.jpg"
-            alt="dwayne schrute"
-          />
-        </p>
-        <div class="is-clipped has-text-centered modalText">
-          Please enter both Name and Zipcode!!!!
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/reset.css" />
+  <link rel="stylesheet" href="./assets/bulma.css" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <title>Testing</title>
+</head>
+
+<body>
+  <!-- Background -->
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content"> 
+      <p class="image is-2by2">
+        <img src="https://www.cheatsheet.com/wp-content/uploads/2019/12/Rainn-Wilson.jpg" alt="dwayne schrute">
+      </p>
+      <div class="is-clipped has-text-centered modalText">Please enter both Name and Zip Code!!!!</div>
+    </div>
+    <button class="modal-close is-large modalBtn" aria-label="close"></button>
+  </div>
+
+  <!-- User Info Page -->
+  <div class="section startPage">
+    <div class="firstPage container is-fluid">
+      <!--Enter First and Last Name for Experience-->
+      <div class="field">
+        <label class="label">Enter Your First Name for a Personal Experience</label>
+
+        <div class="control">
+          <input class="input is-hovered" id="userName" style="width:400px;" type="text" placeholder="e.g Howard Duck">
+
         </div>
       </div>
       <button class="modal-close is-large modalBtn" aria-label="close"></button>
@@ -116,20 +127,24 @@
         </div>
       </div>
 
-      <div class="section">
-        <div class="container is-fluid">
-          <div class="cityName level"></div>
-          <div class="weatherRow columns">
-            <div class="weatherCard column sun" id="0">Sunday</div>
-            <div class="weatherCard column mon" id="1">Monday</div>
-            <div class="weatherCard column tues" id="2">Tuesday</div>
-            <div class="weatherCard column wed" id="3">Wednesday</div>
-            <div class="weatherCard column thurs" id="4">Thursday</div>
-            <div class="weatherCard column fri" id="5">Friday</div>
-            <div class="weatherCard column bookSearchSubmit sat" id="6">
-              Saturday
-            </div>
-          </div>
+  <div class="section">
+    <div class="container is-fluid">
+      <div class="cityName title level"></div>
+      <div class="weatherRow columns">
+        <div class="weatherCard column has-text-centered sun" id="0">Sunday</div>
+        <div class="weatherCard column has-text-centered mon" id="1">Monday</div>
+        <div class="weatherCard column has-text-centered tues" id="2">Tuesday</div>
+        <div class="weatherCard column has-text-centered wed" id="3">Wednesday</div>
+        <div class="weatherCard column has-text-centered thurs" id="4">Thursday</div>
+        <div class="weatherCard column has-text-centered fri" id="5">Friday</div>
+        <div class="weatherCard column has-text-centered bookSearchSubmit sat" id="6">Saturday</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container is-fluid">
+        <div class="eventLabel title level">Events</div>
+        <div class="eventRow columns">
         </div>
       </div>
 

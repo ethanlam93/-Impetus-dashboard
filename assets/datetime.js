@@ -6,9 +6,9 @@ for (var j = 0; j < 7; j++) {
   var displayDOW = moment().add(j, "day").format("dddd");
   var displayDate = moment().add(j, "day").format("MM-DD-YY");
   var dayEl = $("<h3>");
-  dayEl.addClass("day").text(displayDOW);
+  dayEl.addClass("day is-size-4 has-text-weight-bold").text(displayDOW);
   var dateEl = $("<h4>");
-  dateEl.addClass("date").text(displayDate);
+  dateEl.addClass("date is-size-5 has-text-weight-bold").text(displayDate);
   $("#" + j).append(dayEl, dateEl);
 }
 
