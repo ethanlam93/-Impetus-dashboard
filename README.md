@@ -4,10 +4,11 @@ Link: https://github.com/TJFitz/Project_One
 Deployment: https://tjfitz.github.io/Project_One/
 
 ​
-Screenshoot: 
-<img src="Assets/Mainpage.png">
-<img src="Assets/API.png">
-<img src="Assets/API2.png">
+Screenshots: 
+![Alt text](assets/Mainpage.png)
+![Alt text](assets/API.png)
+![Alt text](assets/API2.png)
+
 ​
 
 ## User Story 
