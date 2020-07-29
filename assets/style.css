@@ -4,7 +4,6 @@ html {
 }
 body {
   background-image: url("darkmode.jpg");
-  display: flex;
   justify-content: center;
   background-size: cover;
   overflow: auto;
@@ -64,7 +63,6 @@ body {
 }
 
 #quoteElement {
-  width: 75vw;
   top: 10vh;
   text-align: center;
 }
@@ -114,7 +112,6 @@ blockquote {
   color: white;
   letter-spacing: 0.05em;
   text-shadow: 4px 4px 0px black, 7px 7px 0px rgba(0, 0, 0, 0.2);
-  font-size: 6rem !important;
 }
 
 #headerName:hover {
