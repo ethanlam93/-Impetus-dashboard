@@ -17,5 +17,3 @@ setInterval(function () {
 }, 1000);
 
 gsap.from(".firstPage", { opacity: 0, duration: 2.7, y: -50, ease: "sine.in" });
-
-$(".column").addClass("hvr-sweep-to-right hvr-float")
