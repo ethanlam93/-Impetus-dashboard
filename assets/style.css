@@ -3,15 +3,36 @@ html {
   height: 100%;
 }
 body {
+  background-image: url("darkmode.jpg");
   display: flex;
   justify-content: center;
   background-size: cover;
   overflow: auto;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.labelName, .labelZipcode {
+  color: white
+}
+.is-size-5{
+  font-size: 2rem !important
+}
+
+#bookTitle,
+#name{
+  font-size: 1rem !important;
+}
+
+#description,
+#image{
+  padding: 10px
 }
 
 .column {
-  border: 1px solid black;
+  border-radius: 10px;
   margin: 5px;
+  background:rgb(255, 251, 250, 0.9);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 .startPage {
@@ -36,21 +57,77 @@ body {
 
 #quoteElement {
   width: 75vw;
-  top: 25vh;
+  top: 10vh;
   text-align: center;
 }
 
-.quoteBody {
-  font-size: 30px !important;
+blockquote{
+  align-content: center;
+
 }
+.quoteBody{
+  color:white;
+  opacity: 0.8
+}
+
+.quoteAuthor{
+  font-family: 'Sanchez', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: white;
+  opacity: 0.5
+}
+
+@import "compass/css3";
+.brooks {
+  position: relative;
+  font-family: 'Sanchez', serif;
+  line-height: 1.5em;
+  font-style: italic;}
+  
+  .brooks:before {
+      content: '\201C';
+      position: absolute;
+      left: -0.5em;
+      font-size: 4em;
+      z-index: -1;
+   }
+
+
+
 
 #bookSearchDiv {
   display: flex;
   justify-content: center;
 }
 
-.cityName {
-  font-size: 20px;
+#dateDisplay
+{
+  color: white;
+  text-shadow: 
+      4px 4px 0px black, 
+      7px 7px 0px rgba(0, 0, 0, 0.2);
+}
+#headerName{
+  color:white;
+    letter-spacing: .05em;
+    text-shadow: 
+      4px 4px 0px black, 
+      7px 7px 0px rgba(0, 0, 0, 0.2);
+      font-size: 6rem !important;
+}
+
+#headerName:hover {
+  background: linear-gradient(to right, #8e2de2, #4a00e0)
+}
+
+
+
+.title{
+  color: white !important;
+  text-shadow: 
+      4px 4px 0px black, 
+      7px 7px 0px rgba(0, 0, 0, 0.2);
 }
 
 .modalBtn {
@@ -73,4 +150,31 @@ body {
   left: 0;
   right: 0;
   z-index: -1;
+}
+
+/* create preloader effect */
+.preloader {
+  align-items: center;
+  background: rgb(23, 22, 22);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.3s linear;
+  width: 100%;
+  z-index: 9999;
+  opacity: 1;
+  transform: opacity 1s linear;
+}
+.preloader.loaded{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cityName:hover,
+.eventLabel:hover{
+  background: linear-gradient(to right, #8e2de2, #4a00e0)
+
 }

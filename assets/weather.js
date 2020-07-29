@@ -37,17 +37,17 @@ function getQuote() {
     console.log(response);
     $("#mainQuote").empty();
     $("#mainQuote").html(
-      "<div class='quoteBody title is-1'>" +
+      "<blockquote class='quoteBody title'>" +
         response.quote.body +
-        "</div> <div class='quoteAuthor title is-2 is-italic'>" +
+        "</blockquote> <div class='quoteAuthor'>" +
         response.quote.author +
         "</div>"
     );
     $("#headerQuote").empty();
     $("#headerQuote").html(
-      "<div class='quoteBody title is-4'>" +
+      "<blockquote class='quoteBody title brooks'>" +
         response.quote.body +
-        "</div> <div class='quoteAuthor title is-5 is-italic'>" +
+        "</blockquote> <div class='quoteAuthor'>" +
         response.quote.author +
         "</div>"
     );
@@ -70,13 +70,13 @@ function getEvents() {
     console.log(response);
     for (var x = 0; x < response.events.length; x++) {
       var eventEl = $("<div>");
-      eventEl.addClass("eventCard column has-text-centered");
+      eventEl.addClass("eventCard column has-text-centered hvr-sweep-to-right hvr-float");
       eventEl.attr("id", "x" + x);
       var dateStr = response.events[x].datetime_local;
       var eventDate = moment(dateStr);
       var eventDateDsp = eventDate.utc().format("dddd <br> M-D");
       var dateEl = $("<div>");
-      dateEl.addClass("eventDate is-size-4 has-text-weight-bold");
+      dateEl.addClass("eventDate is-size-6 has-text-weight-bold");
       dateEl.html(eventDateDsp);
       var titleEl = $("<div>");
       titleEl.addClass("eventTitle is-size-6 has-text-weight-semibold");
@@ -178,12 +178,16 @@ function switchDisplay() {
   //display slow animation transition
   gsap.from("#quoteElement", {
     opacity: 0,
-    duration: 2,
+    duration: 3,
     y: 50,
     ease: "sine.in",
   });
+  setTimeout(function () {
+    $("#quoteElement").css("display", "none");
+    $("#mainDashboard").css("display", "block");
+  },8000)
   //Animation for the dashboard
-  var tl = gsap.timeline({ duration: 6, ease: "Sine.easeOut" });
+  var tl = gsap.timeline({ duration: 6, ease: "Sine.easeOut",delay: 2});
   tl.from("#dateDisplay", { opacity: 0, y: -50 })
     .from("#headerName", { opacity: 0, y: -50 })
     .from(".quote", { opacity: 0, y: -50 })
@@ -198,10 +202,7 @@ function switchDisplay() {
     .from(".eventLabel", { opacity: 0, y: -50 }, "-=0.2")
     .from(".eventRow", { opacity: 0, y: -50 }, "-=0.2")
     .from(".apiRow", { opacity: 0, y: -50 });
-  setTimeout(function () {
-    $("#quoteElement").css("display", "none");
-    $("#mainDashboard").css("display", "block");
-  }, 6000);
+  ;
 }
 
 // Click Event to submit form data.
