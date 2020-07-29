@@ -7,13 +7,14 @@
   <link rel="stylesheet" href="./assets/reset.css" />
   <link rel="stylesheet" href="./assets/bulma.css" />
   <link rel="stylesheet" href="./assets/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  <link href="assets/hover.css" rel="stylesheet" media="all">
   <title>Testing</title>
 </head>
 
 <body>
-  <div class="preloader">
-    <img src="assets/Infinity-1s-200px (1).svg" alt="spinner">
-  </div>
+ 
   <!-- Background -->
   <div class="modal">
     <div class="modal-background"></div>
@@ -76,12 +77,12 @@
     <!-- Main DashBoard -->
     <div class="section" style="padding-top:0;padding-bottom:0">
       <div class="hero">
-        <div class="hero-body">
+        <div class="hero-body" style="padding:0">
           <!-- Greetings -->
           <div class="container has-text-centered">
             <div class="welcomeBar">
               <h1 id="dateDisplay" class="is-size-1"></h1>
-              <h1 class="is-size-1" id="headerName">
+              <h1 class="is-size-1" id="headerName" data-text="Welcome Beautiful">
                 Welcome Beautiful
               </h1>
             </div>
@@ -127,17 +128,17 @@
           <div class="columns">
             <!-- Book API -->
             <div class="apiCard column has-text-centered">
-              <h1 class="is-size-5">Your chosen book</h1>
+              <p class="is-size-5">Your chosen book</p>
               <div>
                 <h1 class="is-size-3" id="bookTitle">book title</h1>
                 <div>
                   <img style="margin-top: 1vh;" src="" id="bookCover" alt="" />
                 </div>
-                <h1>
+                <p>
                   <a target="_blank" id="bookLink" href="">
-                    <h1>Buy This Book</h1>
+                    <p>Buy This Book</p>
                   </a>
-                </h1>
+                </p>
                 <div class="field">
                   <label class="label">Looking for something else?</label>
                   <div id="bookSearchDiv" class="control">
@@ -153,14 +154,15 @@
               </div>
             </div>
             <!-- Workout/Recipe API -->
-            <div class="apiCard column has-text-centered">Checkout this Beer
+            <div class="apiCard column has-text-centered">
+              <p class="is-size-5"> Checkout this Beer</p>
               <h2 id="name"></h2>
               <div id="description"></div>
               <img id="image">
             </div>
             <!-- Meme API -->
             <div class="apiCard column has-text-centered">
-              <div>Your Meme</div>
+              <p class="is-size-5">Your Meme</p>
               <div>
                 <img src="" id="meme" />
                 <button class="button is-primary" id="giveMeMore">Give Me More Meme</button>
@@ -182,6 +184,9 @@
           </audio>
         </div>
       </div>
+    </div>
+    <div class="preloader">
+      <img src="assets/Infinity-1s-200px (1).svg" alt="spinner">
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"

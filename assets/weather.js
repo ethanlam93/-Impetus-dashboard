@@ -70,13 +70,13 @@ function getEvents() {
     console.log(response);
     for (var x = 0; x < response.events.length; x++) {
       var eventEl = $("<div>");
-      eventEl.addClass("eventCard column has-text-centered");
+      eventEl.addClass("eventCard column has-text-centered hvr-sweep-to-right hvr-float");
       eventEl.attr("id", "x" + x);
       var dateStr = response.events[x].datetime_local;
       var eventDate = moment(dateStr);
       var eventDateDsp = eventDate.utc().format("dddd <br> M-D");
       var dateEl = $("<div>");
-      dateEl.addClass("eventDate is-size-4 has-text-weight-bold");
+      dateEl.addClass("eventDate is-size-6 has-text-weight-bold");
       dateEl.html(eventDateDsp);
       var titleEl = $("<div>");
       titleEl.addClass("eventTitle is-size-6 has-text-weight-semibold");
@@ -201,7 +201,7 @@ function switchDisplay() {
   setTimeout(function () {
     $("#quoteElement").css("display", "none");
     $("#mainDashboard").css("display", "block");
-  },4000);
+  },1000);
 
 }
 

@@ -7,12 +7,22 @@ body {
   justify-content: center;
   background-size: cover;
   overflow: auto;
+  font-family: 'Red Hat Display', sans-serif;
 }
-/* html{
-  background-image: url("darkmode.jpg");
-  background-position: top left;
-} */
 
+.is-size-5{
+  font-size: 2rem !important
+}
+
+#bookTitle,
+#name{
+  font-size: 1rem !important;
+}
+
+#description,
+#image{
+  padding: 10px
+}
 
 .column {
   border-radius: 10px;
@@ -43,7 +53,7 @@ body {
 
 #quoteElement {
   width: 75vw;
-  top: 25vh;
+  top: 10vh;
   text-align: center;
 }
 
@@ -53,13 +63,15 @@ blockquote{
 }
 .quoteBody{
   color:white;
-  opacity: 0.5
+  opacity: 0.8
 }
 
 .quoteAuthor{
   font-family: 'Sanchez', serif;
   font-style: italic;
-  font-size: 20px
+  font-size: 20px;
+  color: white;
+  opacity: 0.5
 }
 
 @import "compass/css3";
@@ -87,15 +99,26 @@ blockquote{
 
 #dateDisplay
 {
-  color:rgb(28, 12, 59)
+  color: white;
+  text-shadow: 
+      4px 4px 0px black, 
+      7px 7px 0px rgba(0, 0, 0, 0.2);
 }
 #headerName{
-  color: white
+  color:white;
+    letter-spacing: .05em;
+    text-shadow: 
+      4px 4px 0px black, 
+      7px 7px 0px rgba(0, 0, 0, 0.2);
+      font-size: 6rem !important;
 }
 
 
 .title{
   color: white !important;
+  text-shadow: 
+      4px 4px 0px black, 
+      7px 7px 0px rgba(0, 0, 0, 0.2);
 }
 
 .modalBtn {
@@ -120,6 +143,7 @@ blockquote{
   z-index: -1;
 }
 
+/* create preloader effect */
 .preloader {
   align-items: center;
   background: rgb(23, 22, 22);
@@ -139,3 +163,4 @@ blockquote{
   opacity: 0;
   pointer-events: none;
 }
+

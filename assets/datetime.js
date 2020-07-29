@@ -8,7 +8,7 @@ for (var j = 0; j < 7; j++) {
   var dayEl = $("<h3>");
   dayEl.addClass("day is-size-4 has-text-weight-bold").text(displayDOW);
   var dateEl = $("<h4>");
-  dateEl.addClass("date is-size-5 has-text-weight-bold").text(displayDate);
+  dateEl.addClass("date is-size-6 has-text-weight-bold").text(displayDate);
   $("#" + j).append(dayEl, dateEl);
 }
 
@@ -17,3 +17,9 @@ setInterval(function () {
 }, 1000);
 
 gsap.from(".firstPage", { opacity: 0, duration: 2.7, y: -50, ease: "sine.in" });
+
+// $(document).on("load",".column",function(){
+//   $(".column").addClass("hvr-sweep-to-right hvr-float")})
+
+$( document ).ready(function(){
+    $(".column").addClass("hvr-sweep-to-right hvr-float")})
