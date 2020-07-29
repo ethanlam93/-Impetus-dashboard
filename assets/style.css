@@ -1,13 +1,17 @@
-body, html { height: 100%}
+body,
+html {
+  height: 100%;
+}
 body {
   display: flex;
   justify-content: center;
-  
+  background-size: cover;
+  overflow: auto;
 }
-html{
+/* html{
   background-image: url("darkmode.jpg");
   background-position: top left;
-}
+} */
 
 
 .column {
@@ -16,7 +20,6 @@ html{
   background:rgb(255, 251, 250, 0.9);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
-
 
 .startPage {
   position: relative;
@@ -95,16 +98,16 @@ blockquote{
   color: white !important;
 }
 
-.modalBtn{
+.modalBtn {
   max-height: 100px !important;
   max-width: 100px !important;
   height: 100px !important;
-  width: 100px !important
+  width: 100px !important;
 }
 
-.modalText{
+.modalText {
   font-size: 30px;
-  color: white
+  color: white;
 }
 
 .background {
