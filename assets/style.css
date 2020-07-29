@@ -35,6 +35,13 @@ body {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
+.column:hover,
+.quoteBody:hover,
+#dateDisplay:hover{
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: white;
+}
+
 .startPage {
   position: relative;
   top: 25vh;
@@ -126,8 +133,8 @@ blockquote{
 .title{
   color: white !important;
   text-shadow: 
-      4px 4px 0px black, 
-      7px 7px 0px rgba(0, 0, 0, 0.2);
+      2px 2px 0px black, 
+      2px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 .modalBtn {
@@ -178,3 +185,4 @@ blockquote{
   background: linear-gradient(to right, #8e2de2, #4a00e0)
 
 }
+
