@@ -23,4 +23,3 @@ $(document).ready(function () {
     $("#image").attr("src", data[0].image_url).height(100);
   });
 });
-
