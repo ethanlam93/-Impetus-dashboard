@@ -14,7 +14,7 @@ $(document).ready(function () {
       color: "black",
       fontWeight: "bold",
     });
-  
+
     $("#description")
       .text("Description: " + data[0].description);
     $("#image").attr("src", data[0].image_url).height(100);

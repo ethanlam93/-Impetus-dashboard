@@ -3,6 +3,7 @@ html {
   height: 100%;
 }
 body {
+  background-image: url("darkmode.jpg");
   display: flex;
   justify-content: center;
   background-size: cover;
@@ -10,6 +11,9 @@ body {
   font-family: 'Red Hat Display', sans-serif;
 }
 
+.labelName, .labelZipcode {
+  color: white
+}
 .is-size-5{
   font-size: 2rem !important
 }
@@ -113,6 +117,11 @@ blockquote{
       font-size: 6rem !important;
 }
 
+#headerName:hover {
+  background: linear-gradient(to right, #8e2de2, #4a00e0)
+}
+
+
 
 .title{
   color: white !important;
@@ -164,3 +173,8 @@ blockquote{
   pointer-events: none;
 }
 
+.cityName:hover,
+.eventLabel:hover{
+  background: linear-gradient(to right, #8e2de2, #4a00e0)
+
+}

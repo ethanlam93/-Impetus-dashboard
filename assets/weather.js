@@ -178,12 +178,16 @@ function switchDisplay() {
   //display slow animation transition
   gsap.from("#quoteElement", {
     opacity: 0,
-    duration: 2,
+    duration: 3,
     y: 50,
     ease: "sine.in",
   });
+  setTimeout(function () {
+    $("#quoteElement").css("display", "none");
+    $("#mainDashboard").css("display", "block");
+  },8000)
   //Animation for the dashboard
-  var tl = gsap.timeline({ duration: 6, ease: "Sine.easeOut" });
+  var tl = gsap.timeline({ duration: 6, ease: "Sine.easeOut",delay: 2});
   tl.from("#dateDisplay", { opacity: 0, y: -50 })
     .from("#headerName", { opacity: 0, y: -50 })
     .from(".quote", { opacity: 0, y: -50 })
@@ -198,11 +202,7 @@ function switchDisplay() {
     .from(".eventLabel", { opacity: 0, y: -50 }, "-=0.2")
     .from(".eventRow", { opacity: 0, y: -50 }, "-=0.2")
     .from(".apiRow", { opacity: 0, y: -50 });
-  setTimeout(function () {
-    $("#quoteElement").css("display", "none");
-    $("#mainDashboard").css("display", "block");
-  },1000);
-
+  ;
 }
 
 // Click Event to submit form data.
