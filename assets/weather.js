@@ -70,7 +70,9 @@ function getEvents() {
     console.log(response);
     for (var x = 0; x < response.events.length; x++) {
       var eventEl = $("<div>");
-      eventEl.addClass("eventCard column has-text-centered hvr-sweep-to-right hvr-float");
+      eventEl.addClass(
+        "eventCard column has-text-centered hvr-sweep-to-right hvr-float"
+      );
       eventEl.attr("id", "x" + x);
       var dateStr = response.events[x].datetime_local;
       var eventDate = moment(dateStr);
@@ -185,9 +187,9 @@ function switchDisplay() {
   setTimeout(function () {
     $("#quoteElement").css("display", "none");
     $("#mainDashboard").css("display", "block");
-  },8000)
+  }, 8000);
   //Animation for the dashboard
-  var tl = gsap.timeline({ duration: 6, ease: "Sine.easeOut",delay: 2});
+  var tl = gsap.timeline({ duration: 6, ease: "Sine.easeOut", delay: 2 });
   tl.from("#dateDisplay", { opacity: 0, y: -50 })
     .from("#headerName", { opacity: 0, y: -50 })
     .from(".quote", { opacity: 0, y: -50 })
@@ -202,7 +204,6 @@ function switchDisplay() {
     .from(".eventLabel", { opacity: 0, y: -50 }, "-=0.2")
     .from(".eventRow", { opacity: 0, y: -50 }, "-=0.2")
     .from(".apiRow", { opacity: 0, y: -50 });
-  ;
 }
 
 // Click Event to submit form data.
