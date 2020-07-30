@@ -4,7 +4,6 @@ html {
 }
 body {
   background-image: url("darkmode.jpg");
-  display: flex;
   justify-content: center;
   background-size: cover;
   overflow: auto;
@@ -36,6 +35,13 @@ body {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
+.column:hover,
+.quoteBody:hover,
+#dateDisplay:hover {
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: white;
+}
+
 .startPage {
   position: relative;
   top: 25vh;
@@ -57,7 +63,6 @@ body {
 }
 
 #quoteElement {
-  width: 75vw;
   top: 10vh;
   text-align: center;
 }
@@ -107,8 +112,6 @@ blockquote {
   color: white;
   letter-spacing: 0.05em;
   text-shadow: 3px 3px 2px black, 5px 5px 1px rgba(0, 0, 0, 0.2);
-
-  font-size: 6rem !important;
 }
 
 #headerName:hover {
