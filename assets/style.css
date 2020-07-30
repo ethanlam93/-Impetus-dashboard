@@ -4,35 +4,42 @@ html {
 }
 body {
   background-image: url("darkmode.jpg");
-  display: flex;
   justify-content: center;
   background-size: cover;
   overflow: auto;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: "Red Hat Display", sans-serif;
 }
 
-.labelName, .labelZipcode {
-  color: white
+.labelName,
+.labelZipcode {
+  color: white;
 }
-.is-size-5{
-  font-size: 2rem !important
+.is-size-5 {
+  font-size: 2rem !important;
 }
 
 #bookTitle,
-#name{
+#name {
   font-size: 1rem !important;
 }
 
 #description,
-#image{
-  padding: 10px
+#image {
+  padding: 10px;
 }
 
 .column {
   border-radius: 10px;
   margin: 5px;
-  background:rgb(255, 251, 250, 0.9);
+  background: rgba(255, 251, 250, 0.514);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.column:hover,
+.quoteBody:hover,
+#dateDisplay:hover {
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: white;
 }
 
 .startPage {
@@ -56,78 +63,64 @@ body {
 }
 
 #quoteElement {
-  width: 75vw;
   top: 10vh;
   text-align: center;
 }
 
-blockquote{
+blockquote {
   align-content: center;
-
 }
-.quoteBody{
-  color:white;
-  opacity: 0.8
+.quoteBody {
+  color: white;
+  opacity: 0.8;
 }
 
-.quoteAuthor{
-  font-family: 'Sanchez', serif;
+.quoteAuthor {
+  font-family: "Sanchez", serif;
   font-style: italic;
   font-size: 20px;
   color: white;
-  opacity: 0.5
+  opacity: 0.5;
 }
 
 @import "compass/css3";
 .brooks {
   position: relative;
-  font-family: 'Sanchez', serif;
+  font-family: "Sanchez", serif;
   line-height: 1.5em;
-  font-style: italic;}
-  
-  .brooks:before {
-      content: '\201C';
-      position: absolute;
-      left: -0.5em;
-      font-size: 4em;
-      z-index: -1;
-   }
+  font-style: italic;
+}
 
-
-
+.brooks:before {
+  content: "\201C";
+  position: absolute;
+  left: -0.5em;
+  font-size: 4em;
+  z-index: -1;
+}
 
 #bookSearchDiv {
   display: flex;
   justify-content: center;
 }
 
-#dateDisplay
-{
+#dateDisplay {
   color: white;
-  text-shadow: 
-      4px 4px 0px black, 
-      7px 7px 0px rgba(0, 0, 0, 0.2);
+  text-shadow: 3px 3px 2px black, 5px 5px 1px rgba(0, 0, 0, 0.2);
 }
-#headerName{
-  color:white;
-    letter-spacing: .05em;
-    text-shadow: 
-      4px 4px 0px black, 
-      7px 7px 0px rgba(0, 0, 0, 0.2);
-      font-size: 6rem !important;
+#headerName {
+  color: white;
+  letter-spacing: 0.05em;
+  text-shadow: 4px 4px 0px black, 7px 7px 0px rgba(0, 0, 0, 0.2);
 }
 
 #headerName:hover {
-  background: linear-gradient(to right, #8e2de2, #4a00e0)
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
 }
 
-
-
-.title{
+.title {
   color: white !important;
-  text-shadow: 
-      4px 4px 0px black, 
-      7px 7px 0px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 2px black, 4px 4px 1px rgba(0, 0, 0, 0.2);
 }
 
 .modalBtn {
@@ -168,13 +161,12 @@ blockquote{
   opacity: 1;
   transform: opacity 1s linear;
 }
-.preloader.loaded{
+.preloader.loaded {
   opacity: 0;
   pointer-events: none;
 }
 
 .cityName:hover,
-.eventLabel:hover{
-  background: linear-gradient(to right, #8e2de2, #4a00e0)
-
+.eventLabel:hover {
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
 }

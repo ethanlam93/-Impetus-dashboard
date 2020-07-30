@@ -1,17 +1,17 @@
 var currentBackground;
 var imageArray = [
   [
-    "./assets/images/day_clear.jpg",
-    "./assets/images/day_rain.jpg",
-    "./assets/images/day_snow.jpg",
-    "./assets/images/day_storms.jpg",
-    "./assets/images/day_clouds.jpg",
+    "assets/Images/day_clear.jpg",
+    "assets/Images/day_rain.jpg",
+    "assets/Images/day_snow.jpg",
+    "assets/Images/day_storms.jpg",
+    "assets/Images/day_clouds.jpg",
   ],
   [
-    "./assets/images/night_clear.jpg",
-    "./assets/images/night_rain.jpg",
-    "./assets/images/night_snow.jpg",
-    "./assets/images/night_storms.jpg",
+    "assets/Images/night_clear.jpg",
+    "assets/Images/night_rain.jpg",
+    "assets/Images/night_snow.jpg",
+    "assets/Images/night_storms.jpg",
   ],
 ];
 function localWeather() {
