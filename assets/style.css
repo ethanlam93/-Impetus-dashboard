@@ -31,7 +31,7 @@ body {
 .column {
   border-radius: 10px;
   margin: 5px;
-  background: rgba(255, 251, 250, 0.514);
+  background: rgba(255, 251, 250, 0.7);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
