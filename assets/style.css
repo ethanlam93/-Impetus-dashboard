@@ -111,7 +111,7 @@ blockquote {
 #headerName {
   color: white;
   letter-spacing: 0.05em;
-  text-shadow: 3px 3px 2px black, 5px 5px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 4px 4px 0px black, 7px 7px 0px rgba(0, 0, 0, 0.2);
 }
 
 #headerName:hover {
