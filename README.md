@@ -1,7 +1,7 @@
 # Project_One
-Link: https://github.com/TJFitz/Project_One
+My Github Repo: https://github.com/ethanlam93<br>
+Deployment: https://ethanlam93.github.io/Project_One/
 
-Deployment: https://tjfitz.github.io/Project_One/
 
 ​
 Screenshots: 
