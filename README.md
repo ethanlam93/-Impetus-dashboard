@@ -1,6 +1,6 @@
 # Project_One
 My Github Repo: https://github.com/ethanlam93<br>
-Deployment: https://ethanlam93.github.io/Project_One/
+Deployment: https://ethanlam93.github.io/-Impetus-dashboard/
 
 
 ​
